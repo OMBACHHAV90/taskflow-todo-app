@@ -1,0 +1,208 @@
+/* ===== GLOBAL RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #667eea, #764ba2, #6a11cb, #2575fc);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ===== BACKGROUND ANIMATION ===== */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== MAIN APP CONTAINER ===== */
+.app {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.2),
+        0 5px 15px rgba(0,0,0,0.1);
+    color: white;
+    transition: 0.4s ease;
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+header p {
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* ===== INPUT SECTION ===== */
+.task-input {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.task-input input,
+.task-input select {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.task-input input:focus,
+.task-input select:focus {
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+}
+
+/* ===== ADD BUTTON ===== */
+.task-input button {
+    padding: 12px 18px;
+    border-radius: 12px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffffff, #f3f3f3);
+    color: #6a11cb;
+    transition: all 0.3s ease;
+}
+
+.task-input button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== FILTER BUTTONS ===== */
+.filters {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.filters button {
+    margin: 5px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.filters button:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.05);
+}
+
+/* ===== TASK LIST ===== */
+.task-list {
+    margin-top: 15px;
+}
+
+/* ===== TASK CARD ===== */
+.task-card {
+    background: rgba(255,255,255,0.2);
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.4s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== FADE ANIMATION ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.task-info strong {
+    font-size: 15px;
+}
+
+.task-info small {
+    opacity: 0.8;
+    font-size: 12px;
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+/* ===== PRIORITY BADGES ===== */
+.badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 6px;
+    display: inline-block;
+}
+
+.high {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+.medium {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+}
+
+.low {
+    background: linear-gradient(135deg, #00b09b, #96c93d);
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions button {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(255,255,255,0.3);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.actions button:hover {
+    background: rgba(255,255,255,0.6);
+    transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+    .task-input {
+        flex-direction: column;
+    }
+}

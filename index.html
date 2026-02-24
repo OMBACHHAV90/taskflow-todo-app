@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TaskFlow - Professional ToDo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+    <header>
+        <h1>TaskFlow</h1>
+        <p>Organize your day efficiently</p>
+    </header>
+
+    <div class="task-input">
+        <input type="text" id="taskInput" placeholder="Enter your task...">
+        
+        <select id="priority">
+            <option value="1">🔥 High</option>
+            <option value="2">⚡ Medium</option>
+            <option value="3">🌿 Low</option>
+        </select>
+
+        <input type="date" id="dueDate">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="filters">
+        <button onclick="filterTasks('all')">All</button>
+        <button onclick="filterTasks('completed')">Completed</button>
+        <button onclick="filterTasks('pending')">Pending</button>
+    </div>
+
+    <div id="taskList" class="task-list"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
